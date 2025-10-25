@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nespola - Minecraft Dev</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0d1a2b;
+            --accent-color: #06b6d4;
+            --glow-color: #06b6d4;
+        }
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: var(--primary-color);
+        }
+        
+        /* ẢNH MẶC ĐỊNH (LOAD TỪ CODE) */
+        .tech-portrait {
+            position: relative;
+            /* TODO: THAY URL ẢNH Ở ĐÂY! 
+               Đổi link 'https://placehold.co/...' thành URL ảnh chân dung của Nespola 
+            */
+            background-image: url('https://placehold.co/400x500/0d1a2b/06b6d4?text=NESPOLA+DEV');
+            background-color: #1a2a40;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            min-height: 400px;
+            /* Áp dụng hiệu ứng glow ngay lập tức */
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.4), 0 0 40px rgba(6, 182, 212, 0.2); 
+        }
+
+        /* Lớp phủ để làm tối ảnh theo phong cách ảnh gốc */
+        .tech-portrait::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(13, 26, 43, 0.9), rgba(13, 26, 43, 0.2));
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body class="text-white min-h-screen p-4 md:p-8">
+
+    <!-- TODO: Thay đổi cấu trúc Navbar nếu cần nhiều trang hơn -->
+    <header class="container mx-auto flex justify-between items-center py-4 px-4 md:px-0">
+        <div class="text-2xl font-bold text-cyan-400">Nespola.</div>
+        <nav class="hidden md:block">
+            <ul class="flex space-x-8 text-gray-300">
+                <li><a href="#" class="hover:text-cyan-400 transition duration-300">Trang Chủ</a></li>
+                <li><a href="#" class="text-cyan-400 font-medium">Giới Thiệu</a></li>
+                <li><a href="#" class="hover:text-cyan-400 transition duration-300">Client</a></li>
+                <li><a href="#" class="hover:text-cyan-400 transition duration-300">Code/Mods</a></li>
+                <li><a href="#" class="hover:text-cyan-400 transition duration-300">Liên Hệ</a></li>
+            </ul>
+        </nav>
+        <button class="md:hidden text-gray-300 hover:text-cyan-400">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+    </header>
+
+    <!-- Phần Giới Thiệu Chính (Hero Section) -->
+    <main class="container mx-auto mt-16 md:mt-24 px-4 md:px-0">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            
+            <!-- Cột Trái: Text và Nút -->
+            <div class="space-y-6">
+                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight">
+                    Chào, tôi là <span class="text-cyan-400">Nespola</span>
+                </h1>
+                
+                <p class="text-2xl font-semibold text-gray-300 border-l-4 border-cyan-400 pl-4 py-1">
+                    Minecraft Client Creator & Cheater
+                </p>
+
+                <p class="text-gray-400 text-lg max-w-lg leading-relaxed">
+                    Tôi là Nespola, một chuyên gia "tối ưu hóa trải nghiệm" Minecraft. Chuyên môn của tôi? Viết code client đỉnh cao và tạo ra các module cheat để "thăng hoa" trong mọi server, từ SkyWars đến Anarchy. Nếu bạn cần tool hack xịn, hay muốn hiểu sâu về game engine, tôi là người bạn cần tìm. Game là phải thắng, mà thắng phải chất!
+                </p>
+
+                <!-- Các Nút Hành Động -->
+                <div class="flex space-x-4 pt-4">
+                    <a href="https://nespola.client.com" target="_blank" class="px-6 py-3 bg-cyan-600 hover:bg-cyan-700 text-white font-medium rounded-lg shadow-lg shadow-cyan-600/50 transition duration-300 transform hover:scale-105">
+                        <!-- TODO: Thay đổi URL Tải Client thật ở đây -->
+                        Tải Client
+                    </a>
+                    <a href="https://discord.gg/nespola-cheat-crew" target="_blank" class="px-6 py-3 border border-cyan-600 text-cyan-400 hover:bg-cyan-600 hover:text-white font-medium rounded-lg transition duration-300 transform hover:scale-105">
+                        <!-- TODO: Thay đổi URL Discord thật ở đây -->
+                        Vào Discord
+                    </a>
+                </div>
+
+                <!-- Các Icon Mạng Xã Hội -->
+                <div class="flex space-x-6 pt-8 text-gray-400">
+                    <!-- TODO: Thay đổi các URL mạng xã hội thật ở đây -->
+                    <a href="https://github.com/nespola-dev" target="_blank" class="hover:text-cyan-400 transition duration-300" aria-label="Github">
+                        <i data-lucide="github" class="w-7 h-7"></i>
+                    </a>
+                    <a href="https://discord.com/users/nespola" target="_blank" class="hover:text-cyan-400 transition duration-300" aria-label="Discord">
+                        <i data-lucide="message-square-text" class="w-7 h-7"></i>
+                    </a>
+                    <a href="https://youtube.com/@nespola-mc" target="_blank" class="hover:text-cyan-400 transition duration-300" aria-label="YouTube">
+                        <i data-lucide="youtube" class="w-7 h-7"></i>
+                    </a>
+                    <a href="https://instagram.com/nespola_official" target="_blank" class="hover:text-cyan-400 transition duration-300" aria-label="Instagram">
+                        <i data-lucide="instagram" class="w-7 h-7"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cột Phải: Hình ảnh Stylized (Fixed Placeholder from Code) -->
+            <div class="hidden md:flex justify-center md:justify-end">
+                <div class="tech-portrait w-full max-w-md h-[500px]">
+                    <!-- Ảnh chân dung Nespola được load từ thuộc tính background-image trong CSS -->
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
